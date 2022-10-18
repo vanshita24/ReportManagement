@@ -1,0 +1,46 @@
+<h1>Final Result</h1>
+<% 
+ var dict = {};
+ 
+ function getKeyByValue(object, value) {
+            for (var prop in object) {
+                if (object.hasOwnProperty(prop)) {
+                    if (object[prop] === value)
+                    return prop;
+                }
+            }
+        }
+
+
+ student.forEach(element => {
+	
+	
+	   
+        
+		var k=(element.score11+element.score12+element.score13+element.score21+element.score22+element.score23 )/6;
+	 dict[element.roll]=k;
+	 
+ })
+var items = Object.keys(dict).map(
+  (key) => { return [key, dict[key]] });
+items.sort(
+  (first, second) => { return first[1] - second[1] }
+);
+items.reverse();
+var keys = items.map(
+  (e) => { return e[0] });
+
+
+
+
+
+
+
+
+%>
+<h3> Highest Scorer is Roll Number : <%= keys[0]%></h3>
+<h3> Second Highest Scorer is Roll Number : <%= keys[1] %></h3>
+
+    
+
+

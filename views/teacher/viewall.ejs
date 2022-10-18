@@ -1,0 +1,53 @@
+
+
+    <button class="btn">
+        <a href="/teacher/add">Add Student</a>
+    </button>
+<h4 >All Students</h4>
+<div class="tableDiv">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Roll No.</th>
+        <th scope="col">Name</th>       
+        
+        <th scope="col">Score in Subject1 Sem1</th>
+		<th scope="col">Score in Subject2 Sem1</th>
+		<th scope="col">Score in Subject3 Sem1</th>
+		<th scope="col">Score in Subject1 Sem2</th>
+		<th scope="col">Score in Subject2 Sem2</th>
+		<th scope="col">Score in Subject3 Sem2</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <%  student.forEach(element => { %>
+            <tr class="head">
+                <td><%= element.roll %></td>
+                <td><%= element.name %></td>               
+                
+                <td><%= element.score11 %></td> 
+				<td><%= element.score12 %></td> 
+				<td><%= element.score13 %></td> 
+				
+                <td><%= element.score21 %></td> 
+				<td><%= element.score22 %></td> 
+				<td><%= element.score23 %></td> 
+                <td>
+                  <a href="/teacher/edit/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png"/></a>
+                  <a href="/teacher/delete/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                </td>
+              </tr>
+        <%}) %>
+    </tbody>
+  </table>
+	 <button class="btn">
+        <a href="/teacher/sem1">Semester1 Result</a>
+    </button>
+	 <button class="btn">
+        <a href="/teacher/sem2">Semester2 Result</a>
+    </button>
+	<button class="btn">
+        <a href="/teacher/final">Final Result</a>
+    </button>
+</div>

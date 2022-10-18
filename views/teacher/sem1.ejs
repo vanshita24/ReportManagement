@@ -1,0 +1,29 @@
+<h1>Sem1 Result</h1>
+<% var subj1=0,
+	subj2=0,
+	subj3=0,
+	tot=0
+ student.forEach(element => {
+	
+	
+	
+        tot++;
+		subj1=subj1 +  element.score11
+		 subj2=subj2+  element.score12 
+		 subj3=subj3+ element.score13 
+	 
+   
+ }) 
+var avg1=subj1/tot,
+    avg2=subj2/tot,
+	avg3=subj3/tot;
+    avg=(avg1+avg2+avg3)/3;
+%>
+<h3>Average Score Of Subject1 is : <%= avg1 %></h3>
+  <h3>Average Score Of Subject2 is : <%= avg2 %></h3>
+  <h3>Average Score Of Subject3 is : <%= avg3 %></h3>  
+  <h2>Sem 1 average percentage is : <%=avg%></h2>
+  
+    
+
+
